@@ -17,7 +17,7 @@ public class ParkingSpace {
 	 *   
 	 * @return true there is space or false case parking lot is full
 	 */
-	public boolean freeParkingSpace() {
+	public static boolean freeParkingSpace() {
 		//TODO implement method
 		return false;
 	}
@@ -41,14 +41,14 @@ public class ParkingSpace {
 	 * returno how many parking space are free 
 	 * @return number of total space free at time
 	 */
-	public int freeSpace() {
+	public static int freeSpace() {
 		return totalParkingSpace - ParkingSpace.blockParkingSpace;
 	}
 	
 	/***
 	 * update number of space  blocks after vehicle entry 
 	 */
-	public void updateparkingspace() {
+	public static void updateparkingspace() {
 		ParkingSpace.blockParkingSpace ++;
 	}
 }

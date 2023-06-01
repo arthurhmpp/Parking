@@ -5,7 +5,7 @@ import java.util.List;
 
 import model.Checkinout;
 
-public class DOAParking {
+public class DAOParking {
 	public void insert(Checkinout checkinout) {
 		//TODO implement
 	}

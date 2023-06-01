@@ -8,6 +8,8 @@ import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 
 import controller.ParkingController;
+import controller.ParkingException;
+import controller.VehicleException;
 
 public class CheckinVehicleScreen extends JFrame implements ActionListener{
 	
@@ -91,7 +93,12 @@ public class CheckinVehicleScreen extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("ok")) {
 			ParkingController controller = new ParkingController();
-			controller.checkin(tfLicensePlate.getText(), txtBrandCar.getText(), txtModel.getText(), txtColor.getText());
+			try {
+				controller.checkin(tfLicensePlate.getText(), txtBrandCar.getText(), txtModel.getText(), txtColor.getText());
+				JOptionPane.showMessageDialog(null, "Veiculo registrado com sucesso", "Entrada de veiculo", JOptionPane.INFORMATION_MESSAGE);
+			} catch (ParkingException | VehicleException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Falha na Entrada", JOptionPane.ERROR_MESSAGE);
+			}
 			this.parent.setVisible(true);
 			this.dispose();
 		}

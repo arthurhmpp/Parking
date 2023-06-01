@@ -17,6 +17,11 @@ public class Checkinout {
 	private LocalDateTime DateCheckout;
 	private double price;
 	
+	public Checkinout(Vehicle vehicle, LocalDateTime dateCheckin) {
+		this.vehicle = vehicle;
+		this.DateCheckin = dateCheckin;
+	}
+	
 	public Vehicle getVehicle() {
 		return vehicle;
 	}

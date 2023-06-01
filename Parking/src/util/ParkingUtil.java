@@ -1,5 +1,8 @@
 package util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import model.Checkinout;
 
 /***
@@ -17,9 +20,11 @@ public class ParkingUtil {
 	 * @param licensePlate
 	 * @return true to validated or false case it is out of standard 
 	 */
-	public boolean validLicensePlate(String licensePlate) {
-		//TODO IMPLEMENT
-		return false;
+	public static boolean validLicensePlate(String licensePlate) {
+		String defaultlicense = "[A_Z][A_Z][A_Z]-\\d\\d\\d\\d";
+		Pattern p = Pattern.compile(defaultlicense);
+		Matcher m = p.matcher(licensePlate);
+		return m.matches();
 	}
 	/***
 	 *  calculate the amount to be charged based on the fees and set the time of entry/exit 

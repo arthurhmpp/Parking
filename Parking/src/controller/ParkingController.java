@@ -38,6 +38,7 @@ public class ParkingController {
 		dao.insert(checkinout);
 		//update the number of occupied space 
 		ParkingSpace.updateparkingspace();
+		//ioio
 		
 	}
 	
